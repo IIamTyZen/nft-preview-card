@@ -1,0 +1,230 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Outfit', sans-serif;
+  
+  --h1-font-size: 22px;
+  --p-font-size: 18px;
+
+  /*========== Font weight ==========*/
+  --font-medium: 300;
+  --font-semi-bold: 400;
+  --font-bold: 600;
+
+  /*========== marg Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+}
+
+
+/*=============== BASE ===============*/
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: var(--main-bg);
+}
+
+h1,h2,h3,h4,p{
+  font-family: Outfit;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+
+/*=============== Card ===============*/
+
+.main-section{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card{
+  align-self: center;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 20px;
+}
+
+.nft-image{
+  width: 350px;
+  border-radius: 1rem;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  opacity: 1;
+  display: block;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 5%;
+}
+
+.hover-animation{
+  background-color: var(--cyan);
+  border-radius: 18px;
+}
+
+.hover-animation:hover .nft-image {
+  opacity: 0.3;
+}
+
+.hover-animation:hover .middle {
+  opacity: 1;
+}
+
+
+
+.nft{
+  margin-top: 1.5rem;
+  color: var(--white);
+  font-size: var(--h1-font-size);
+}
+
+.nft:hover{
+  color: var(--cyan);
+  transition: 0.9s ease;
+}
+
+.first-p{
+  margin-top: 1.5rem;
+  color: var(--soft-blue);
+  font-size: var(--p-font-size);
+}
+
+.price-nft{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.price-eth{
+  display: flex;
+}
+
+.price{
+  margin-left: 5px;
+  color: var(--cyan);
+  font-size: 1.1rem;
+}
+
+.clock{
+  display: flex;
+}
+
+.clock-img{
+  width: 1.4rem;
+}
+
+.time-left{
+  margin-left: 5px;
+  font-size: 1.1rem;
+  color: var(--soft-blue);
+}
+
+hr{
+  margin-top: 2rem;
+  width: auto;
+  height: 1.3px;
+  background-color: var(--line);
+  border: 0px;
+}
+
+.author{
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.author-img{
+  width: 10%;
+  border: 1.9px solid var(--white);
+  border-radius: 50%;
+}
+
+.author-text{
+  margin-left: 1rem;
+  color: var(--soft-blue);
+}
+
+.author-text span{
+  color: var(--white);
+}
+
+.author-text span:hover{
+    color: var(--cyan);
+    transition: 0.9s ease;
+}
+
+
+@media screen and (max-width: 375px){
+  .main-section{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    margin-top: 10%;
+  }
+
+  .nft-image{
+    width: auto;
+    height: auto;
+  }
+
+  .middle{
+    top: 28%;
+    left: 51%;
+  }
+
+}
+
